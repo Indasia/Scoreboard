@@ -1,8 +1,19 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import Counter from './Counter';
 
 // use PureComponent for performance issues if a specific component is rerendering too often
 class Player extends PureComponent {
+
+    static PropTypes = {
+        changeScore: PropTypes.func,
+        removePlayer: PropTypes.func,
+        name: PropTypes.string.isRequired,
+        score: PropTypes.number.isRequired,
+        id: PropTypes.number,
+        index: PropTypes.number
+    };
+
     render() {
         return (
             <div className="player">
